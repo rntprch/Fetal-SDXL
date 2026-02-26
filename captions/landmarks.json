@@ -1,0 +1,83 @@
+{
+  "_schema": {
+    "status_enum": ["present", "partial", "not_clearly_seen", "out_of_view"],
+    "position_type": "string_or_array_of_strings",
+    "position_enum": ["upper_left", "upper_center", "upper_right",
+                      "mid_left", "mid_center", "mid_right",
+                      "lower_left", "lower_center", "lower_right"],
+    "quality_enum": ["excellent", "good", "medium", "poor"],
+    "artifacts_enum": ["none", "motion_blur", "speckle_noise", "acoustic_shadow", "dropout", "reverberation", "gain_too_high", "gain_too_low", "partial_fov"]
+  },
+
+  "brain_trans_thalamic": {
+    "required_fields": [
+      "calvarium_rim",
+      "midline_echo",
+      "thalami",
+      "csp",
+      "lateral_ventricle_margins",
+      "third_ventricle",
+      "posterior_fossa",
+      "image_quality",
+      "artifacts",
+      "limitations_note"
+    ],
+    "landmarks": {
+      "calvarium_rim": "Hyperechoic curved/ovoid calvarial outline forming the cranial boundary.",
+      "midline_echo": "Central echogenic line/plane representing midline falx/echo.",
+      "thalami": "Paired, relatively symmetric central structures (often mildly echogenic) near midline.",
+      "csp": "Anechoic or hypoechoic structure (box-like, slit-like, or triangular gap) located in the anterior midline, anterior to the thalami.",
+      "lateral_ventricle_margins": "Echogenic ventricular walls/margins (do not assume atrium unless seen).",
+      "third_ventricle": "Thin anechoic slit-like space between thalami (only if distinct).",
+      "posterior_fossa": "Posterior fossa structures; often obscured by acoustic shadow. Mark 'not_clearly_seen' if only a dark shadow is visible."
+    }
+  },
+
+  "brain_trans_ventricular": {
+    "required_fields": [
+      "calvarium_rim",
+      "midline_echo",
+      "lateral_ventricle",
+      "atrium_region",
+      "choroid_plexus",
+      "csp",
+      "posterior_fossa",
+      "image_quality",
+      "artifacts",
+      "limitations_note"
+    ],
+    "landmarks": {
+      "calvarium_rim": "Hyperechoic curved/ovoid calvarial outline forming the cranial boundary.",
+      "midline_echo": "Central echogenic line/plane representing midline falx/echo.",
+      "lateral_ventricle": "Anechoic/low-echo ventricular cavity with definable echogenic walls.",
+      "atrium_region": "Posterior/atrium portion of lateral ventricle (only if identifiable as atrium region).",
+      "choroid_plexus": "Echogenic tissue within ventricle (commonly in atrium) — only if clearly echogenic within cavity.",
+      "csp": "CSP is often not clearly seen here; mark not_clearly_seen unless a definite box-like anechoic cavity is present.",
+      "posterior_fossa": "Posterior fossa structures; often obscured by acoustic shadow. Mark 'not_clearly_seen' if only a dark shadow is visible."
+    }
+  },
+
+  "brain_trans_cerebellum": {
+    "required_fields": [
+      "calvarium_rim",
+      "midline_echo",
+      "cerebellum",
+      "posterior_fossa",
+      "cisterna_magna",
+      "csp",
+      "thalami",
+      "image_quality",
+      "artifacts",
+      "limitations_note"
+    ],
+    "landmarks": {
+      "calvarium_rim": "Hyperechoic curved/ovoid calvarial outline forming the cranial boundary.",
+      "midline_echo": "Central echogenic midline structure (if present in field).",
+      "cerebellum": "Paired cerebellar hemispheres / posterior fossa content with characteristic symmetric outline (only if clearly defined).",
+      "posterior_fossa": "Posterior fossa region containing cerebellum/adjacent structures.",
+      "cisterna_magna": "Anechoic space posterior to cerebellum (only if clearly delineated).",
+      "csp": "Often out_of_view; do not claim present unless clearly seen.",
+      "thalami": "Often out_of_view; do not claim present unless clearly seen."
+    }
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "sdxl": true,
+
+  "pretrained_model_name_or_path": "./weights/sd_xl_base_1.0.safetensors",
+
+  "logging_dir": "./fetal_ultrasound/log",
+  "train_data_dir": "./fetal_ultrasound/img",
+  "reg_data_dir": "",
+  "output_dir": "./fetal_ultrasound/output",
+
+  "max_resolution": "1024,1024",
+
+  "learning_rate": "1e-4",
+  "unet_lr": "1e-4",
+  "text_encoder_lr": "1e-4",
+
+  "lr_scheduler": "cosine",
+  "lr_warmup": "50",
+
+  "train_batch_size": 4,
+  "gradient_accumulation_steps": 2,
+
+  "max_train_epochs": "8",
+  "save_every_n_epochs": "1",
+
+  "mixed_precision": "bf16",
+  "save_precision": "bf16",
+
+  "seed": "1234",
+  "num_cpu_threads_per_process": 2,
+
+  "cache_latents": true,
+  "caption_extension": ".txt",
+
+  "enable_bucket": true,
+  "bucket_reso_steps": 32,
+  "bucket_no_upscale": true,
+
+  "gradient_checkpointing": true,
+
+  "network_train_unet_only": false,
+  "cache_text_encoder_outputs": false,
+  "cache_text_encoder_outputs_to_disk": false,
+
+  "no_half_vae": true,
+
+  "optimizer": "adamw8bit",
+  "optimizer_args": ["weight_decay=0.1"],
+
+  "network_dim": 16,
+  "network_alpha": 16,
+  "lora_network_weights": "",
+
+  "save_model_as": "safetensors",
+  "save_state": true,
+  "resume": "",
+
+  "max_data_loader_n_workers": "1",
+
+  "output_name": "sdxl_lora_r16_a16_e8"
+}
